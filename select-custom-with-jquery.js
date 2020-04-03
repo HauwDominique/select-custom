@@ -6,6 +6,7 @@ $(function () {
     $('<div class="select-selected">Select car :</div>').insertAfter('select');
     $('<div class="select-items"></div>').insertAfter('.select-selected').hide();
 
+
     //BOUCLE : on regard chaque element de la classe custom-select (le select)
 
     $option.each(function () {
@@ -35,7 +36,6 @@ $(function () {
 
 
     //Au clic sur "select-selected" on affiche les div "select-items"
-
     $('.select-selected').on('click', function () {
         $(this).addClass('active');
         $('.select-items').show();
@@ -43,14 +43,12 @@ $(function () {
 
 
     //Au clic sur "select-items" on cache les div "select-items"
-
     $('.select-items').click(function () {
         $('.select-items').hide();
         $('.select-selected').removeClass('active');
     });
 
     //  Ferme la div "select-items' si on clic à l'extérieur de celle-ci
-
     $(document).mouseup(function (e) {
         var container = $('.select-items');
         if(!container.is(e.target) && container.has(e.target).length==0) {
