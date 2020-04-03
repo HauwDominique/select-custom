@@ -16,15 +16,14 @@ $(function () {
         $('<div class="item"></div>').appendTo('.select-items').text(optionText);
     });
 
+    //Au clic sur l'un de ces items
     $('.item').on('click', function () {
-        $('.item').removeClass('selected');
-        $(this).addClass('same-as-selected');
         itemVal = $(this).text();
 
         //on affecte le texte selectionné au parent ".select-selected"
         $('.select-selected').text(itemVal);
 
-        //on boucle sur les options pour affecter l'attribut selected à l'option choisie
+        //on boucle sur les options pour affecter l'attribut "selected" à l'option choisie
         $option.each(function () {
             selectText = $(this).text();
             if(itemVal == selectText) {
